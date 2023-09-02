@@ -1,0 +1,39 @@
+<div class="container mt-5">
+  <form class="config-itens" [formGroup]="formCadastro" (ngSubmit)="submitCadastroMovimentacao()">
+    <label class="col-md-3">
+      Placa
+      <input type="text" [value]="paramPlaca" />
+    </label>
+
+    <label class="col-md-3">
+      Valor
+      <input type="number" formControlName="valor"/>
+    </label>
+
+    <label class="col-md-3">
+      Quantidade
+      <input type="number" formControlName="quantidade"/>
+    </label>
+
+    <button type="submit" class="col-md-3 btn btn-primary">Enviar</button>
+  </form>
+
+  <table class="col-md-6">
+    <thead>
+      <tr>
+        <th>Entrada</th>
+        <th>Pago</th>
+        <th>Saída</th>
+        <th>Valor total</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of movimentacao">
+      <tr>
+        <td>{{item.entrada | date:"MM/dd/yy hh:mm:ss"}}</td>
+        <td>{{item.pago}}</td>
+        <td>{{item.saida | date:"MM/dd/yy hh:mm:ss"}}</td>
+        <td>{{item.valorTotal}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

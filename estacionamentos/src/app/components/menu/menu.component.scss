@@ -1,0 +1,26 @@
+nav {
+  background-color: var(--primary);
+
+  ul {
+    list-style: none;
+    display: flex;
+    padding: 20px;
+
+    li {
+      margin-right: 20px;
+
+      a {
+        color: var(--white);
+        font-weight: bold;
+        text-decoration: none;
+        &.is-active {
+          background: var(--white);
+          border-radius: 5px;
+          padding: 5px;
+
+          color: var(--black);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+<nav class="container">
+  <ul class="col-md-12">
+    <li>
+      <a
+        [routerLink]="['']"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Administração
+      </a>
+    </li>
+
+    <li>
+      <a
+        [routerLink]="['/cadastro']"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Cadastro
+      </a>
+    </li>
+  </ul>
+</nav>

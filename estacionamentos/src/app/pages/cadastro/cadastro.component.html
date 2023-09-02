@@ -1,0 +1,36 @@
+<div class="container mt-5">
+  <form class="config-itens" [formGroup]="formCadastro" (ngSubmit)="submitCadastroVeiculo()">
+    <label class="col-md-3">
+      Placa
+      <input type="text" formControlName="placa"/>
+    </label>
+
+    <label class="col-md-4">
+      Tipo (0 = Moto / 1 = Carro)
+      <input type="number" formControlName="tipo"/>
+    </label>
+
+    <button type="submit" class="col-md-3 btn btn-primary">Enviar</button>
+  </form>
+
+  <table class="col-md-6">
+    <thead>
+      <tr>
+        <th>Placa</th>
+        <th>Tipo</th>
+        <th>Entrada</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of veiculo">
+      <tr>
+        <td>
+          <a [routerLink]="['/pagamentos', item.placa]" class="placa">
+            {{item.placa}}
+          </a>
+        </td>
+        <td>{{item.tipo}}</td>
+        <td>{{item.horarioEntrada | date:"MM/dd/yy hh:mm:ss"}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

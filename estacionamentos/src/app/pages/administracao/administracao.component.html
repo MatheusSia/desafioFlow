@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <form class="config-itens" [formGroup]="formCadastro" (ngSubmit)="submitCadastroNota()">
+    <label class="col-md-3">
+      Valor
+      <input type="number" formControlName="valor"/>
+    </label>
+
+    <label class="col-md-3">
+      Quantidade
+      <input type="number" formControlName="quantidade"/>
+    </label>
+
+    <button type="submit" class="col-md-3 btn btn-primary">Enviar</button>
+  </form>
+
+  <table class="col-md-6">
+    <thead>
+      <tr>
+        <th>Valor</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let item of estoque">
+      <tr>
+        <td>{{item.valor}}</td>
+        <td>{{item.quantidade}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
